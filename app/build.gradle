@@ -1,0 +1,92 @@
+apply plugin: 'com.android.application'
+apply plugin: 'com.neenbedankt.android-apt'
+apply plugin: 'me.tatarka.retrolambda'
+
+android {
+  compileSdkVersion 23
+  buildToolsVersion "23.0.3"
+
+  defaultConfig {
+    applicationId "co.mikealegria"
+    minSdkVersion 17
+    targetSdkVersion 23
+    versionCode 1
+    versionName "1.0"
+  }
+  compileOptions {
+
+    sourceCompatibility JavaVersion.VERSION_1_8
+    targetCompatibility JavaVersion.VERSION_1_8
+  }
+  buildTypes {
+    release {
+      minifyEnabled false
+      proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+    }
+  }
+}
+repositories {
+  mavenCentral()
+  maven { url 'https://maven.fabric.io/public' }
+  maven { url "https://jitpack.io" }
+  maven { url "http://dl.bintray.com/tbruyelle/tbruyelle" }
+}
+retrolambda {
+  jvmArgs '-noverify'
+}
+
+dependencies {
+  final RETROFIT_VERSION = '2.0.0-beta3'
+  compile 'com.android.support:multidex:1.0.1' //MultiDex Support
+
+  //UI
+  compile 'com.android.support:support-annotations:23.2.0'
+  compile 'com.android.support:design:23.2.0'
+  compile 'com.android.support:appcompat-v7:23.2.0'
+  compile 'com.jakewharton:butterknife:7.0.1'
+  compile 'com.intuit.sdp:sdp-android:1.0.0'
+  compile 'com.pkmmte.view:circularimageview:1.1'
+  compile 'com.squareup.picasso:picasso:2.5.2'
+
+  compile('com.github.afollestad.material-dialogs:core:0.8.5.6@aar') {
+    transitive = true
+  }
+
+  //retrofit  api rest web service
+  compile "com.squareup.retrofit2:retrofit:$RETROFIT_VERSION"
+  compile "com.squareup.retrofit2:converter-gson:$RETROFIT_VERSION"
+  compile "com.squareup.retrofit2:adapter-rxjava:$RETROFIT_VERSION"
+  compile "com.squareup.okhttp3:okhttp:3.1.2"
+  compile 'com.squareup.okhttp3:logging-interceptor:3.2.0'
+
+  compile 'com.squareup.okhttp:okhttp-urlconnection:2.0.0'
+  compile 'com.squareup.okhttp:okhttp:2.4.0'
+  compile 'com.squareup.okio:okio:1.0.1'
+
+  compile 'com.google.code.gson:gson:2.6.1'
+
+  //rxAndroid
+  compile 'com.jakewharton.rxbinding:rxbinding-support-v4:0.4.0'
+  compile 'com.jakewharton.rxbinding:rxbinding-appcompat-v7:0.4.0'
+  compile('com.trello:rxlifecycle-components:0.5.0')
+
+  compile('io.reactivex:rxandroid:1.1.0') {
+    //    exclude group: 'rx.android', module: 'plugins'
+    //    exclude group: 'rx.android', module: 'schedulers'
+  }
+  compile 'io.reactivex:rxjava:1.1.0'
+
+  //dbNonSql
+  compile('io.supercharge:rxsnappy:0.3.0')
+  //EventBus
+  compile 'org.greenrobot:eventbus:3.0.0'
+  //Logger
+  compile 'com.github.orhanobut:logger:1.12'
+
+  apt "org.immutables:value:2.1.16" // <-- for annotation processor
+  provided "org.immutables:value:2.1.16" // <-- for annotation api
+  provided "org.immutables:gson:2.1.16" // for annotations
+  compile 'com.google.guava:guava:19.0'
+  provided 'org.glassfish:javax.annotation:10.0-b28' //Required by Dagger2
+
+}
