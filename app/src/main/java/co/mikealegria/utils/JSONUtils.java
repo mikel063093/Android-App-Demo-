@@ -15,7 +15,7 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * Created by miguelalegria on 29/1/16 for epass.
+ * Created by miguelalegria
  */
 public class JSONUtils {
   public static Map<String, Object> jsonToMap(@NonNull String json) {

@@ -47,10 +47,10 @@ dependencies {
   compile 'com.intuit.sdp:sdp-android:1.0.0'
   compile 'com.pkmmte.view:circularimageview:1.1'
   compile 'com.squareup.picasso:picasso:2.5.2'
+  compile 'com.borjabravo:readmoretextview:1.1.2'
+  compile 'gr.pantrif:easy-android-splash-screen:0.0.1'
+  compile 'com.makeramen:roundedimageview:2.2.1'
 
-  compile('com.github.afollestad.material-dialogs:core:0.8.5.6@aar') {
-    transitive = true
-  }
 
   //retrofit  api rest web service
   compile "com.squareup.retrofit2:retrofit:$RETROFIT_VERSION"
@@ -66,20 +66,14 @@ dependencies {
   compile 'com.google.code.gson:gson:2.6.1'
 
   //rxAndroid
-  compile 'com.jakewharton.rxbinding:rxbinding-support-v4:0.4.0'
   compile 'com.jakewharton.rxbinding:rxbinding-appcompat-v7:0.4.0'
-  compile('com.trello:rxlifecycle-components:0.5.0')
 
-  compile('io.reactivex:rxandroid:1.1.0') {
-    //    exclude group: 'rx.android', module: 'plugins'
-    //    exclude group: 'rx.android', module: 'schedulers'
-  }
+  compile('io.reactivex:rxandroid:1.1.0') {  }
   compile 'io.reactivex:rxjava:1.1.0'
 
   //dbNonSql
   compile('io.supercharge:rxsnappy:0.3.0')
-  //EventBus
-  compile 'org.greenrobot:eventbus:3.0.0'
+
   //Logger
   compile 'com.github.orhanobut:logger:1.12'
 
@@ -87,6 +81,7 @@ dependencies {
   provided "org.immutables:value:2.1.16" // <-- for annotation api
   provided "org.immutables:gson:2.1.16" // for annotations
   compile 'com.google.guava:guava:19.0'
-  provided 'org.glassfish:javax.annotation:10.0-b28' //Required by Dagger2
+
+  compile 'com.github.pwittchen:reactivenetwork:0.2.0'
 
 }

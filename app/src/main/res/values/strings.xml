@@ -1,3 +1,5 @@
 <resources>
   <string name="app_name">DemoMike</string>
+  <string name="category">Categorias</string>
+  <string name="offile">Sin conexión a internet</string>
 </resources>

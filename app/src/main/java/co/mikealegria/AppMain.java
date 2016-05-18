@@ -4,16 +4,13 @@ import android.app.Application;
 import android.content.Context;
 import android.support.annotation.NonNull;
 import android.support.multidex.MultiDex;
-import android.util.Log;
-
 import com.orhanobut.logger.LogLevel;
 import com.orhanobut.logger.Logger;
-
 import io.supercharge.rxsnappy.RxSnappy;
 import io.supercharge.rxsnappy.RxSnappyClient;
 
 /**
- * Created by miguelalegria on 7/27/15.
+ * Created by miguelalegria
  */
 public class AppMain extends Application {
   private static Context context;
@@ -38,7 +35,7 @@ public class AppMain extends Application {
 
   public void initRxDb() {
     // Logger.e("Appmain InitDB");
-    Log.e("AppMain", "initDB");
+    // Log.e("AppMain", "initDB");
     if (getContex() != null) {
       RxSnappy.init(getContex());
       if (rxSnappyClient == null) rxSnappyClient = new RxSnappyClient();

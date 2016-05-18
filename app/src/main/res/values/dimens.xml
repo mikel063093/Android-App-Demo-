@@ -2,4 +2,14 @@
   <!-- Default screen margins, per the Android Design guidelines. -->
   <dimen name="activity_horizontal_margin">16dp</dimen>
   <dimen name="activity_vertical_margin">16dp</dimen>
+  <dimen name="article_content_horizontal_margin">0dp</dimen>
+  <dimen name="article_content_padding">16dp</dimen>
+
+  <dimen name="shot_item_container_padding">0dp</dimen>
+  <dimen name="shot_item_margin">0dp</dimen>
+  <dimen name="shot_item_margin_bottom">8dp</dimen>
+  <dimen name="shot_image_height">300dp</dimen>
+  <dimen name="shot_comments_margin_bottom">0dp</dimen>
+
+  <dimen name="content_recycler_view_padding">0dp</dimen>
 </resources>
